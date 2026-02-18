@@ -57,7 +57,7 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className="antialiased bg-[color:var(--color-primary-bg)] text-slate-50">
+      <body className="antialiased bg-[color:var(--color-page-bg)] text-[color:var(--color-text-dark)]">
         <script
           type="application/ld+json"
           // eslint-disable-next-line react/no-danger

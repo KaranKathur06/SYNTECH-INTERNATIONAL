@@ -54,13 +54,12 @@ export function CapabilitiesSection() {
   }, []);
 
   return (
-    <SectionWrapper id="capabilities" variant="dark">
+    <SectionWrapper id="capabilities">
       <div ref={rootRef}>
         <SectionHeader
           eyebrow="Capabilities"
           title="Integrated casting, machining and inspection under one roof"
           subtitle="Our structure is built to support OEM drawings, project-specific requirements and long-term supply programs with stable process windows and documented controls across every operation."
-          variant="dark"
         />
 
         <div className="mt-14 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -74,7 +73,7 @@ export function CapabilitiesSection() {
                 {item.title}
               </div>
               <div className="mt-4 h-[2px] w-10 bg-[color:var(--color-accent-gold)]" />
-              <p className="mt-5 text-sm text-slate-700">{item.body}</p>
+              <p className="mt-5 text-sm text-[color:var(--color-text-muted)]">{item.body}</p>
             </Card>
           ))}
         </div>

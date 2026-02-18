@@ -16,7 +16,7 @@ export function SectionWrapper({
   const base =
     "section-padding-y " +
     (variant === "dark"
-      ? "bg-[color:var(--color-primary-bg)] text-slate-50"
+      ? "bg-[color:var(--color-page-bg)] text-[color:var(--color-text-dark)]"
       : "bg-[color:var(--color-light-section)] text-[color:var(--color-text-dark)]");
 
   return (

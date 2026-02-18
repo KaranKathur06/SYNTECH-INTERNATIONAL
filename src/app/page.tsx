@@ -4,6 +4,7 @@ import { CapabilitiesSection } from "../components/CapabilitiesSection";
 import { IndustriesSection } from "../components/IndustriesSection";
 import { MetalsSection } from "../components/MetalsSection";
 import { ExcellenceSection } from "../components/ExcellenceSection";
+import { FacilityGallerySection } from "../components/FacilityGallerySection";
 import { ContactSection } from "../components/ContactSection";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <IndustriesSection />
       <MetalsSection />
       <ExcellenceSection />
+      <FacilityGallerySection />
       <ContactSection />
     </>
   );

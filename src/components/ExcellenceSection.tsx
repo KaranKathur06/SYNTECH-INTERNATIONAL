@@ -1,110 +1,133 @@
-"use client";
-
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { SectionWrapper } from "./SectionWrapper";
 import { SectionHeader } from "./SectionHeader";
 
-gsap.registerPlugin(ScrollTrigger);
-
 const PROCESS_STEPS = [
-  "Raw Material Procurement",
-  "Incoming Inspection",
-  "Casting / Forging",
-  "CNC Machining",
-  "Surface Finishing",
-  "Final Quality Control",
-  "Packaging & Shipping",
+  {
+    title: "Raw material procurement",
+    body: "Verified sources, controlled chemistry and traceable heat numbers before production begins.",
+  },
+  {
+    title: "Incoming inspection",
+    body: "Dimensional checks and material verification aligned to drawing and customer requirements.",
+  },
+  {
+    title: "Casting & forging",
+    body: "Stable process windows and documented parameters to ensure consistent metallurgy.",
+  },
+  {
+    title: "CNC machining",
+    body: "Bore geometry, surface finish and fits delivered with CNC-controlled repeatability.",
+  },
+  {
+    title: "Surface finishing",
+    body: "Deburring, cleaning and protective finishing designed for handling and shipment integrity.",
+  },
+  {
+    title: "Final quality control",
+    body: "Batch-wise inspection records and gauge plans for critical-to-quality features.",
+  },
+  {
+    title: "Packaging & dispatch",
+    body: "Structured packing and labeling to protect parts and reduce receiving time for buyers.",
+  },
 ];
 
 const WHY_US = [
-  "Strict Quality Control",
-  "Skilled Workforce",
-  "Bulk Production Capability",
-  "Timely Delivery",
-  "Industrial Infrastructure",
+  "Strict quality control",
+  "Skilled workforce",
+  "Bulk production capability",
+  "On-time dispatch planning",
+  "Industrial infrastructure",
 ];
 
 export function ExcellenceSection() {
-  const rootRef = useRef<HTMLDivElement | null>(null);
-
-  useEffect(() => {
-    if (!rootRef.current) return;
-
-    const ctx = gsap.context(() => {
-      gsap.from("[data-process-step]", {
-        scrollTrigger: {
-          trigger: rootRef.current,
-          start: "top 70%",
-        },
-        opacity: 0,
-        y: 32,
-        duration: 0.5,
-        stagger: 0.12,
-        ease: "power2.out",
-      });
-    }, rootRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-    <SectionWrapper id="excellence" variant="light" className="bg-slate-100">
-      <div ref={rootRef}>
+    <SectionWrapper id="excellence" variant="light" className="bg-slate-50">
+      <div className="mx-auto max-w-6xl">
         <SectionHeader
           eyebrow="Manufacturing Excellence"
           title="Operational discipline through structured processes"
           subtitle="Our manufacturing philosophy is built on repeatability. From raw material to packed component, every step is defined, measured and monitored to provide procurement teams with predictable supply and consistent performance in the field."
         />
 
-        <div className="mt-12">
-          <ol className="space-y-6">
-            {PROCESS_STEPS.map((step, index) => (
-              <li
-                key={step}
-                data-process-step
-                className="flex items-start gap-4"
-              >
-                <div className="flex flex-col items-center">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-full border border-[color:var(--color-accent-gold)] bg-white text-[11px] font-semibold text-[color:var(--color-text-dark)]">
-                    {index + 1}
+        <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.75fr)]">
+          <div>
+            <div className="grid gap-5 sm:grid-cols-2">
+              {PROCESS_STEPS.map((step, index) => (
+                <article
+                  key={step.title}
+                  className="group rounded-md border border-slate-200 bg-white p-5 shadow-sm shadow-slate-900/5 transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/10 hover:border-[color:var(--color-accent-gold)]/50"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-md bg-[color:var(--color-primary-bg)] text-[11px] font-semibold tracking-[0.22em] !text-white shadow-sm shadow-slate-900/10 ring-1 ring-slate-900/5 transition-transform duration-300 group-hover:scale-[1.03]">
+                      <span className="absolute inset-0 rounded-md bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.18),transparent_55%)] opacity-80" />
+                      <span className="relative">{String(index + 1).padStart(2, "0")}</span>
+                    </div>
+                    <div>
+                      <div className="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--color-text-dark)]">
+                        {step.title}
+                      </div>
+                      <p className="mt-2 text-sm text-[color:var(--color-text-muted)]">
+                        {step.body}
+                      </p>
+                    </div>
                   </div>
-                  {index < PROCESS_STEPS.length - 1 && (
-                    <div className="mt-2 h-8 w-px bg-[color:var(--color-accent-gold)]/60" />
-                  )}
-                </div>
-                <p className="text-xs md:text-sm font-semibold uppercase tracking-[0.18em] text-[color:var(--color-text-dark)]">
-                  {step}
-                </p>
-              </li>
-            ))}
-          </ol>
-        </div>
+                </article>
+              ))}
+            </div>
 
-        <div className="mt-10 grid gap-8 md:grid-cols-3">
-          <div className="md:col-span-2">
-            <p className="text-sm text-[color:var(--color-text-muted)]">
-              Every project starts with a clear understanding of the operating
-              environment, expected life and critical-to-quality dimensions.
-              Process sheets, inspection plans and tooling are aligned to this
-              definition so that each batch behaves like the previous one—across
-              thousands of components.
-            </p>
+            <div className="mt-10 rounded-md border border-slate-200 bg-white p-6 shadow-sm shadow-slate-900/5">
+              <div className="grid gap-6 md:grid-cols-3">
+                <div>
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+                    Repeatability
+                  </div>
+                  <div className="mt-2 text-sm text-[color:var(--color-text-muted)]">
+                    Process sheets, inspection plans and tooling are aligned so that each batch behaves like the previous one.
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+                    Traceability
+                  </div>
+                  <div className="mt-2 text-sm text-[color:var(--color-text-muted)]">
+                    Heat numbers and inspection records mapped to production lots for audit-ready procurement workflows.
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+                    Consistency
+                  </div>
+                  <div className="mt-2 text-sm text-[color:var(--color-text-muted)]">
+                    Dimensional stability and surface finish control for OEM and long-run replacement programs.
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="space-y-4">
+
+          <aside className="rounded-md border border-slate-200 bg-white p-6 shadow-sm shadow-slate-900/5">
             <h3 className="text-xs font-semibold uppercase tracking-[0.18em] text-[color:var(--color-text-dark)]">
               Why procurement teams choose Syntech
             </h3>
-            <ul className="space-y-2 text-sm text-[color:var(--color-text-muted)]">
+            <ul className="mt-4 space-y-3 text-sm text-[color:var(--color-text-muted)]">
               {WHY_US.map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <span className="mt-1 h-1.5 w-1.5 rounded-full bg-[color:var(--color-accent-gold)]" />
+                <li key={item} className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[color:var(--color-accent-gold)]" />
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
-          </div>
+
+            <div className="mt-8 rounded-md border border-slate-200 bg-slate-50 p-4">
+              <div className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">
+                Procurement-ready outputs
+              </div>
+              <div className="mt-2 text-sm text-[color:var(--color-text-muted)]">
+                Batch reports, inspection records and structured communication designed to support audits and long-term supply programs.
+              </div>
+            </div>
+          </aside>
         </div>
       </div>
     </SectionWrapper>

@@ -30,7 +30,7 @@ export function ContactSection() {
   }, []);
 
   return (
-    <SectionWrapper id="contact" variant="dark">
+    <SectionWrapper id="contact">
       <div ref={rootRef} data-contact-root>
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] items-start">
           <div>
@@ -38,12 +38,11 @@ export function ContactSection() {
               eyebrow="Contact"
               title="Discuss your cylinder liner and air cooled block requirements"
               subtitle="Share your drawings, annual volume estimates and target schedules. Our team will respond with a structured, technical response—never a generic catalogue quote."
-              variant="dark"
             />
 
-            <div className="mt-8 space-y-4 text-sm text-slate-300">
+            <div className="mt-8 space-y-4 text-sm text-[color:var(--color-text-muted)]">
               <div>
-                <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                   Location
                 </div>
                 <div className="mt-1">
@@ -53,13 +52,13 @@ export function ContactSection() {
                 </div>
               </div>
               <div>
-                <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                   Phone
                 </div>
                 <div className="mt-1">+91-9099990905</div>
               </div>
               <div>
-                <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+                <div className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-500">
                   Email
                 </div>
                 <div className="mt-1">sales@syntech-international.com</div>
@@ -67,12 +66,12 @@ export function ContactSection() {
             </div>
           </div>
 
-          <div className="card-dark rounded-sm border border-slate-800 bg-slate-950/70 p-6">
+          <div className="card-dark rounded-sm p-6">
             <form className="space-y-4 text-sm">
               <div>
                 <label
                   htmlFor="name"
-                  className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300"
+                  className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600"
                 >
                   Name &amp; Company
                 </label>
@@ -80,14 +79,14 @@ export function ContactSection() {
                   id="name"
                   name="name"
                   type="text"
-                  className="mt-2 w-full rounded-sm border border-slate-700 bg-slate-950/60 px-3 py-2 text-sm text-slate-100 outline-none focus:border-[color:var(--color-accent-gold)]"
+                  className="mt-2 w-full rounded-sm border border-slate-200 bg-white px-3 py-2 text-sm text-[color:var(--color-text-dark)] outline-none focus:border-[color:var(--color-accent-gold)]"
                   placeholder="Your name, company and location"
                 />
               </div>
               <div>
                 <label
                   htmlFor="email"
-                  className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300"
+                  className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600"
                 >
                   Work Email
                 </label>
@@ -95,7 +94,7 @@ export function ContactSection() {
                   id="email"
                   name="email"
                   type="email"
-                  className="mt-2 w-full rounded-sm border border-slate-700 bg-slate-950/60 px-3 py-2 text-sm text-slate-100 outline-none focus:border-[color:var(--color-accent-gold)]"
+                  className="mt-2 w-full rounded-sm border border-slate-200 bg-white px-3 py-2 text-sm text-[color:var(--color-text-dark)] outline-none focus:border-[color:var(--color-accent-gold)]"
                   placeholder="name@company.com"
                 />
               </div>
@@ -103,7 +102,7 @@ export function ContactSection() {
                 <div>
                   <label
                     htmlFor="volume"
-                    className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300"
+                    className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600"
                   >
                     Annual Volume
                   </label>
@@ -111,14 +110,14 @@ export function ContactSection() {
                     id="volume"
                     name="volume"
                     type="text"
-                    className="mt-2 w-full rounded-sm border border-slate-700 bg-slate-950/60 px-3 py-2 text-sm text-slate-100 outline-none focus:border-[color:var(--color-accent-gold)]"
+                    className="mt-2 w-full rounded-sm border border-slate-200 bg-white px-3 py-2 text-sm text-[color:var(--color-text-dark)] outline-none focus:border-[color:var(--color-accent-gold)]"
                     placeholder="e.g. 18,000 liners / year"
                   />
                 </div>
                 <div>
                   <label
                     htmlFor="timeline"
-                    className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300"
+                    className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600"
                   >
                     Project Timeline
                   </label>
@@ -126,7 +125,7 @@ export function ContactSection() {
                     id="timeline"
                     name="timeline"
                     type="text"
-                    className="mt-2 w-full rounded-sm border border-slate-700 bg-slate-950/60 px-3 py-2 text-sm text-slate-100 outline-none focus:border-[color:var(--color-accent-gold)]"
+                    className="mt-2 w-full rounded-sm border border-slate-200 bg-white px-3 py-2 text-sm text-[color:var(--color-text-dark)] outline-none focus:border-[color:var(--color-accent-gold)]"
                     placeholder="start date, ramp-up plan"
                   />
                 </div>
@@ -134,7 +133,7 @@ export function ContactSection() {
               <div>
                 <label
                   htmlFor="message"
-                  className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-300"
+                  className="block text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-600"
                 >
                   Application &amp; Requirements
                 </label>
@@ -142,13 +141,13 @@ export function ContactSection() {
                   id="message"
                   name="message"
                   rows={4}
-                  className="mt-2 w-full rounded-sm border border-slate-700 bg-slate-950/60 px-3 py-2 text-sm text-slate-100 outline-none focus:border-[color:var(--color-accent-gold)]"
+                  className="mt-2 w-full rounded-sm border border-slate-200 bg-white px-3 py-2 text-sm text-[color:var(--color-text-dark)] outline-none focus:border-[color:var(--color-accent-gold)]"
                   placeholder="Briefly describe application, component type, material expectations and any standards to be followed."
                 />
               </div>
               <button
                 type="submit"
-                className="inline-flex w-full items-center justify-center rounded-sm bg-[color:var(--color-accent-gold)] px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--color-text-dark)] hover:bg-[#d4b35f] transition-colors"
+                className="inline-flex w-full items-center justify-center rounded-sm bg-[color:var(--color-primary-bg)] px-4 py-2.5 text-xs font-semibold uppercase tracking-[0.22em] text-white hover:bg-[color:var(--color-secondary-dark)] transition-colors"
               >
                 Submit Inquiry
               </button>
@@ -157,7 +156,7 @@ export function ContactSection() {
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)]">
-          <div className="h-64 overflow-hidden rounded-md border border-[color:var(--color-accent-gold)]/70 bg-slate-950/70 shadow-xl shadow-black/40">
+          <div className="h-64 overflow-hidden rounded-md border border-slate-200 bg-white shadow-xl shadow-slate-900/10">
             <iframe
               title="Syntech International - Rajkot, Gujarat"
               src="https://www.google.com/maps?q=Syntech+International,+No.-2/4+Street,+Punit+Nagar,+Jamnagar+Road,+150+Ft+Ring+Road,+Rajkot,+Gujarat,+360006,+India&output=embed"
@@ -167,7 +166,7 @@ export function ContactSection() {
             />
           </div>
           <div className="flex items-center">
-            <p className="text-sm text-slate-300">
+            <p className="text-sm text-[color:var(--color-text-muted)]">
               <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[color:var(--color-accent-gold)]">
                 Partner With Syntech International
               </span>

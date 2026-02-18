@@ -12,7 +12,7 @@ export function Card({ variant = "light", children, className = "" }: CardProps)
   const variantClass =
     variant === "light"
       ? "bg-white shadow-lg shadow-slate-900/15 border-slate-200/80 hover:bg-gray-50 hover:border-[color:var(--color-accent-gold)]/80"
-      : "bg-slate-900/70 border-slate-700/80 hover:bg-[#0c1325] hover:border-[color:var(--color-accent-gold)]/80";
+      : "bg-white shadow-lg shadow-slate-900/10 border-slate-200/80 hover:bg-slate-50 hover:border-[color:var(--color-accent-gold)]/80";
 
   return (
     <article
